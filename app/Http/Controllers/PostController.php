@@ -8,6 +8,7 @@ use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -49,9 +50,16 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
 //        return $request;
+
         if (!Storage::exists('public/thumbnail')){
             Storage::makeDirectory('public/thumbnail');
         }
+
+        //Database Transition ၂နည်း
+//        DB::transaction(function () use ($request){
+
+//        try {
+
 
 
         $post= new Post();
@@ -87,6 +95,15 @@ class PostController extends Controller
                 $photo->save();
             }
         }
+
+//        DB::commit();
+//
+//        }catch (\Exception $e){
+//            DB::rollBack();
+//            throw $e;
+//        }
+
+//        });
 
         //return $request;
 
