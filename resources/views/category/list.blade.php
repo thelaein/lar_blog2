@@ -3,6 +3,7 @@
     <tr>
         <th>#</th>
         <th>Title</th>
+        <th>Photo</th>
         <th>Owner</th>
         <th>Control</th>
         <th>created_at</th>
@@ -13,6 +14,7 @@
         <tr>
             <td>{{$category->id}}</td>
             <td>{{$category->title}}</td>
+            <td>{{$category->photos}}</td>
             <td>{{$category->user->name}}</td>
             <td>
                 <form action="{{route('category.destroy',$category->id)}}" method="post" class="d-inline-block">

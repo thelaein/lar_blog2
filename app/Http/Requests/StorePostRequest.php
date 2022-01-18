@@ -35,4 +35,11 @@ class StorePostRequest extends FormRequest
             'tags.*'=>'exists:tags,id',
         ];
     }
+
+    public function messages() //custom validation စစ်ချင်တာ
+    {
+        return [
+            "title.required"=>"you need title"
+        ];
+    }
 }

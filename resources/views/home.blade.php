@@ -14,7 +14,17 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+{{--                    {{ __('You are logged in!') }}--}}
+
+
+{{--                    {{auth()->user()->photos}}--}}
+
+                    {{$my}}
+
+
+                        <x-alert class="py-5" type="danger">San Kyi Tar</x-alert>
+                        <x-alert class="py-1">Hello</x-alert>
+{{--                    <x-alert />--}}
 
 
 

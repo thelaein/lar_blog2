@@ -35,12 +35,13 @@
                     <ul class="navbar-nav me-auto">
                         @auth()
                         <li class="nav-item">
-                            <a href="{{route('home')}}" class="nav-link {{request()->url() == route('home') ? 'active' : ''}}">Home</a>
+                            <x-nav-link name="home">Home</x-nav-link>
                         </li>
 
                         @isAdmin()
                         <li class="nav-item">
-                            <a href="{{route('category.create')}}" class="nav-link {{request()->url() == route('category.create') ? 'active' : ''}}">Manage Category</a>
+                            <x-nav-link name="category.create">Manage Category</x-nav-link>
+
                         </li>
                         @endisAdmin
 
@@ -50,17 +51,20 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li>
-                                    <a href="{{route('post.index')}}" class="nav-link {{request()->url() == route('post.index') ? 'active' : ''}}">Post List</a>
+                                    <x-nav-link name="post.index">Post List</x-nav-link>
+
                                 </li>
                                 <li>
-                                    <a href="{{route('post.create')}}" class="nav-link {{request()->url() == route('post.create') ? 'active' : ''}}">Create Post</a>
+                                    <x-nav-link name="post.create">Post Create</x-nav-link>
+
                                 </li>
 
                             </ul>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{route('tag.create')}}" class="nav-link {{request()->url() == route('tag.create') ? 'active' : ''}}">Manage Tag</a>
+                            <x-nav-link name="tag.create">Manage Tag</x-nav-link>
+
                         </li>
                         @endauth
                     </ul>

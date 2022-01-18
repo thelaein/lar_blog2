@@ -18,7 +18,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        return Tag::inRandomOrder()->limit(rand(1,4))->get()->pluck('id');
     }
 
     /**
